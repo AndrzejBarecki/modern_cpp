@@ -13,7 +13,7 @@ Circle::Circle(const Circle & other)
 
 double Circle::getArea() const
 {
-    return M_PI * r_ * r_ * r_ ;
+    return M_PI * r_ * r_;
 }
 
 double Circle::getPerimeter() const
