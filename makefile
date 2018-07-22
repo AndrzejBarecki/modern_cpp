@@ -1,14 +1,26 @@
 CXX = g++
-CXXFLAGS = -Wall -Wextra - Wpedantic
-OBJ = *.cpp *.hpp
+CXXFLAGS = -c -O3 -Wall -Wextra -Wpedantic
+OBJ = Circle.o Rectangle.o Shape.o Square.o main.o
 
-modern: $(OBJ)
-	$(CXX) $(OBJ) -O3 -o modern
+all: $(OBJ)
+	$(CXX) $(OBJ) -o output
 
-moderndebug:  $(OBJ)
-	$(CXX) $(OBJ) -g -o moderndebug
+Circle.o: Circle.cpp Circle.hpp
+	$(CXX) $(CXXFLAGS) $< -o $@
+
+Rectangle.o: Rectangle.cpp Rectangle.hpp
+	$(CXX) $(CXXFLAGS) $< -o $@
+
+Shape.o: Shape.cpp Shape.hpp
+	$(CXX) $(CXXFLAGS) $< -o $@
+
+Square.o: Square.cpp Square.hpp
+	$(CXX) $(CXXFLAGS) $< -o $@
+
+main.o: main.cpp *.hpp
+	$(CXX) $(CXXFLAGS) $< -o $@
 
 clean:
-	rm *.o modern moderndebug
-	
+	rm *.o output
+
 
