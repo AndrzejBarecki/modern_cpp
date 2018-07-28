@@ -1,6 +1,6 @@
 CXX = g++
 CXXFLAGS = -c -O3 -Wall -Wextra -Wpedantic
-OBJ = Circle.o Rectangle.o Shape.o Square.o main.o
+OBJ := $(patsubst %.cpp,%.o,$(wildcard *.cpp))
 
 all: $(OBJ)
 	$(CXX) $^ -o output
