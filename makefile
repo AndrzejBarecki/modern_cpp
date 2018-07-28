@@ -3,7 +3,7 @@ CXXFLAGS = -c -O3 -Wall -Wextra -Wpedantic
 OBJ = Circle.o Rectangle.o Shape.o Square.o main.o
 
 all: $(OBJ)
-	$(CXX) $(OBJ) -o output
+	$(CXX) $^ -o output
 
 Circle.o: Circle.cpp Circle.hpp
 	$(CXX) $(CXXFLAGS) $< -o $@
